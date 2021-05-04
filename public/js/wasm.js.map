@@ -1,0 +1,1 @@
+{"version":3,"file":"wasm.js","sourceRoot":"","sources":["../../ts/wasm.ts"],"names":[],"mappings":"AAAA,aAAa;AACb,OAAO,MAAM,MAAM,8DAA8D,CAAC;AAElF,aAAa;AACb,MAAM,EAAC,OAAO,EAAC,GAAG,MAAM,MAAM,CAAC,WAAW,CAAC,KAAK,CAAC,uBAAuB,CAAC,CAAC,CAAC;AAE3E,MAAM,CAAC,MAAM,SAAS,GAAG,OAAO,CAAC,SAAkC,CAAC"}

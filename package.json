@@ -16,6 +16,7 @@
     "asbuild:optimized": "asc assembly/index.ts --target release",
     "asbuild": "yarn asbuild:untouched && yarn asbuild:optimized",
     "tsbuild": "tsc",
+    "build": "yarn asbuild && yarn tsbuild && copy /Y ts\\index.html public\\index.html",
     "test": "node tests"
   }
 }

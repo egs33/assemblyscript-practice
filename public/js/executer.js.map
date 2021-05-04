@@ -1,0 +1,1 @@
+{"version":3,"file":"executer.js","sourceRoot":"","sources":["../../ts/executer.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU,SAAS,CAAC,CAAS;IAC/B,IAAI,CAAC,IAAI,CAAC,EAAE;QACR,OAAO,CAAC,CAAC;KACZ;IACD,OAAO,SAAS,CAAC,CAAC,GAAG,CAAC,CAAC,GAAG,SAAS,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC;AAC/C,CAAC"}
