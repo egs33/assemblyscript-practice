@@ -7,8 +7,8 @@
       "debug": true
     },
     "release": {
-      "binaryFile": "build/optimized.wasm",
-      "textFile": "build/optimized.wat",
+      "binaryFile": "public/wasm/optimized.wasm",
+      "textFile": "public/wasm/optimized.wat",
       "sourceMap": true,
       "optimizeLevel": 3,
       "shrinkLevel": 1,
