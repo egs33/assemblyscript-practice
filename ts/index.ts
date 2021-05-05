@@ -33,3 +33,18 @@ document.getElementById('fibonacci')?.addEventListener('click', (e) => {
     () => executer.fibSimple(n),
     () => wasnExecuter.fibSimple(n));
 });
+
+document.getElementById('tarai')?.addEventListener('click', (e) => {
+  const dom = e.target as HTMLButtonElement;
+  const trDom = dom.parentElement?.parentElement;
+  const numberDoms = dom.parentNode?.querySelectorAll<HTMLInputElement>('input[type=number]');
+  if (!trDom || !numberDoms || numberDoms.length < 3) {
+    return;
+  }
+  const x = Number.parseInt(numberDoms[0].value, 10);
+  const y = Number.parseInt(numberDoms[1].value, 10);
+  const z = Number.parseInt(numberDoms[2].value, 10);
+  measureTime(trDom,
+    () => executer.tarai(x, y, z),
+    () => wasnExecuter.tarai(x, y, z));
+});
