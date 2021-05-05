@@ -19,11 +19,26 @@ const measureTime = (trDom, jsExec, wasmExec) => {
         wasmDom.textContent = `${duration}ms (${resultWasm})`;
     }
 };
-document.getElementById("fibonacci")?.addEventListener('click', (e) => {
+document.getElementById('fibonacci')?.addEventListener('click', (e) => {
     const dom = e.target;
-    const trDom = dom.parentElement.parentElement;
+    const trDom = dom.parentElement?.parentElement;
     const numberDom = dom.parentNode?.querySelector('input[type=number]');
+    if (!trDom || !numberDom) {
+        return;
+    }
     const n = Number.parseInt(numberDom.value, 10);
     measureTime(trDom, () => executer.fibSimple(n), () => wasnExecuter.fibSimple(n));
+});
+document.getElementById('tarai')?.addEventListener('click', (e) => {
+    const dom = e.target;
+    const trDom = dom.parentElement?.parentElement;
+    const numberDoms = dom.parentNode?.querySelectorAll('input[type=number]');
+    if (!trDom || !numberDoms || numberDoms.length < 3) {
+        return;
+    }
+    const x = Number.parseInt(numberDoms[0].value, 10);
+    const y = Number.parseInt(numberDoms[1].value, 10);
+    const z = Number.parseInt(numberDoms[2].value, 10);
+    measureTime(trDom, () => executer.tarai(x, y, z), () => wasnExecuter.tarai(x, y, z));
 });
 //# sourceMappingURL=index.js.map
