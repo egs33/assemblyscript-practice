@@ -7,6 +7,8 @@
     "@assemblyscript/loader": "^0.18.31"
   },
   "devDependencies": {
+    "@egs33/eslint-config": "^1.2.2",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
     "assemblyscript": "^0.18.31",
     "eslint": "^7.25.0",
     "typescript": "^4.2.4"
@@ -17,6 +19,7 @@
     "asbuild": "yarn asbuild:untouched && yarn asbuild:optimized",
     "tsbuild": "tsc",
     "build": "yarn asbuild && yarn tsbuild && copy /Y ts\\index.html public\\index.html",
-    "test": "node tests"
+    "test": "node tests",
+    "lint": "eslint ts assembly"
   }
 }
