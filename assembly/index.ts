@@ -1,12 +1,8 @@
-// The entry file of your WebAssembly module.
+export const add = (a: i32, b: i32): i32 => a + b;
 
-export function add(a: i32, b: i32): i32 {
-  return a + b;
-}
-
-export function fibSimple(n: i32):i32 {
+export const fibSimple = (n: i32): i32 => {
   if (n <= 1) {
     return 1;
   }
   return fibSimple(n - 1) + fibSimple(n - 2);
-}
+};
