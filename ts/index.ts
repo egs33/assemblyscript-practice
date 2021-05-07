@@ -61,3 +61,16 @@ document.getElementById('prime')?.addEventListener('click', (e) => {
     () => executer.primeNumbers(n).length,
     () => wasnExecuter.primeNumbers(n).length);
 });
+
+document.getElementById('eratosthenes')?.addEventListener('click', (e) => {
+  const dom = e.target as HTMLButtonElement;
+  const trDom = dom.parentElement?.parentElement;
+  const numberDom: HTMLInputElement|null|undefined = dom.parentNode?.querySelector('input[type=number]');
+  if (!trDom || !numberDom) {
+    return;
+  }
+  const n = Number.parseInt(numberDom.value, 10);
+  measureTime(trDom,
+    () => executer.sieveOfEratosthenes(n),
+    () => wasnExecuter.sieveOfEratosthenes(n));
+});

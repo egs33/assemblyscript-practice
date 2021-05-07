@@ -38,3 +38,17 @@ export const primeNumbers = (n: number): number[] => {
   }
   return primeNums;
 };
+
+export const sieveOfEratosthenes = (n: number): number => {
+  const numbers = new Array<number>(n + 1);
+  numbers.fill(0);
+  numbers[0] = 1;
+  numbers[1] = 1;
+  const max = Math.sqrt(n);
+  for (let i = 2; i <= max; i++) {
+    for (let j = 2; i * j <= n; j++) {
+      numbers[i * j] = 1;
+    }
+  }
+  return numbers.reduce((prev, num) => (num === 0 ? prev + 1 : prev), 0);
+};

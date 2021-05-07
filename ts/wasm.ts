@@ -17,3 +17,4 @@ export const primeNumbers = (n: number): number[] => {
   // eslint-disable-next-line no-underscore-dangle
   return exports.__getArray(ptr) as number[];
 };
+export const sieveOfEratosthenes = exports.sieveOfEratosthenes as (n: number) => number;

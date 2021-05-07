@@ -26,7 +26,7 @@ export function tarai(x: i32, y: i32, z: i32): i32 {
  * @param n threshold (>=2)
  */
 // eslint-disable-next-line func-style
-export function primeNumbers (n: i32): i32[] {
+export function primeNumbers(n: i32): i32[] {
   const primeNums = [2];
   for (let i = 3; i <= n; i++) {
     const sqrt = Math.sqrt(i);
@@ -42,4 +42,23 @@ export function primeNumbers (n: i32): i32[] {
     }
   }
   return primeNums;
+}
+
+/**
+ * Counts prime numbers under or equal n.
+ * trial division algorithm
+ * @param n threshold (>=2)
+ */
+// eslint-disable-next-line func-style
+export function sieveOfEratosthenes(n: i32): i32 {
+  const numbers = new Int32Array(n + 1);
+  numbers[0] = 1;
+  numbers[1] = 1;
+  const max = Math.sqrt(n);
+  for (let i = 2; i <= max; i++) {
+    for (let j = 2; i * j <= n; j++) {
+      unchecked(numbers[i * j] = 1);
+    }
+  }
+  return numbers.reduce((prev, num) => (num === 0 ? prev + 1 : prev), 0);
 }
