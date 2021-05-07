@@ -48,3 +48,16 @@ document.getElementById('tarai')?.addEventListener('click', (e) => {
     () => executer.tarai(x, y, z),
     () => wasnExecuter.tarai(x, y, z));
 });
+
+document.getElementById('prime')?.addEventListener('click', (e) => {
+  const dom = e.target as HTMLButtonElement;
+  const trDom = dom.parentElement?.parentElement;
+  const numberDom: HTMLInputElement|null|undefined = dom.parentNode?.querySelector('input[type=number]');
+  if (!trDom || !numberDom) {
+    return;
+  }
+  const n = Number.parseInt(numberDom.value, 10);
+  measureTime(trDom,
+    () => executer.primeNumbers(n).length,
+    () => wasnExecuter.primeNumbers(n).length);
+});

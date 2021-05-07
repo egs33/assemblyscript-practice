@@ -19,3 +19,27 @@ export function tarai(x: i32, y: i32, z: i32): i32 {
     tarai(z - 1, x, y),
   );
 }
+
+/**
+ * Gets prime numbers under or equal n.
+ * trial division algorithm
+ * @param n threshold (>=2)
+ */
+// eslint-disable-next-line func-style
+export function primeNumbers (n: i32): i32[] {
+  const primeNums = [2];
+  for (let i = 3; i <= n; i++) {
+    const sqrt = Math.sqrt(i);
+    for (let j = 0; j < primeNums.length; j++) {
+      const p = unchecked(primeNums[j]);
+      if (p > sqrt) {
+        primeNums.push(i);
+        break;
+      }
+      if (i % p === 0) {
+        break;
+      }
+    }
+  }
+  return primeNums;
+}

@@ -12,3 +12,8 @@ const { exports } = await loader.instantiate(fetch('./wasm/optimized.wasm'));
 
 export const fibSimple = exports.fibSimple as (n: number) => number;
 export const tarai = exports.tarai as (x: number, y: number, z: number) => number;
+export const primeNumbers = (n: number): number[] => {
+  const ptr = exports.primeNumbers(n) as number;
+  // eslint-disable-next-line no-underscore-dangle
+  return exports.__getArray(ptr) as number[];
+};

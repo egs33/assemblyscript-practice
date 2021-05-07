@@ -16,3 +16,25 @@ export const tarai = (x: number, y: number, z: number): number => {
     tarai(z - 1, x, y),
   );
 };
+
+/**
+ * Gets prime numbers under or equal n.
+ * trial division algorithm
+ * @param n threshold (>=2)
+ */
+export const primeNumbers = (n: number): number[] => {
+  const primeNums: number[] = [2];
+  for (let i = 3; i <= n; i++) {
+    const sqrt = Math.sqrt(i);
+    for (const p of primeNums) {
+      if (p > sqrt) {
+        primeNums.push(i);
+        break;
+      }
+      if (i % p === 0) {
+        break;
+      }
+    }
+  }
+  return primeNums;
+};
